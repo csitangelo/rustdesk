@@ -234,12 +234,6 @@ where
     Ok(io::BufReader::new(file).lines())
 }
 
-pub fn is_valid_custom_id(id: &str) -> bool {
-    regex::Regex::new(r"^[-\w]{4,15}$")
-        .unwrap()
-        .is_match(id)
-}
-
 pub fn get_version_number(v: &str) -> i64 {
     let mut n = 0;
     for x in v.split('.') {
